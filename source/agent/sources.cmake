@@ -1,0 +1,54 @@
+# - G4agent module build definition
+
+# Define the Geant4 Module.
+geant4_add_module(G4agent
+  PUBLIC_HEADERS
+    G4AgentManager.hh
+    G4AgentAnalysis.hh
+    G4AgentLLMBackend.hh
+    G4AgentLLMConfig.hh
+    G4AgentLLMFake.hh
+    G4AgentLLMFactory.hh
+    G4AgentKnowledge.hh
+    G4AgentProject.hh
+    G4AgentPublication.hh
+  PRIVATE_HEADERS
+    G4Agent.hh
+    G4AgentCheck.hh
+    G4AgentInspect.hh
+    G4AgentMessenger.hh
+    G4AgentPolicy.hh
+    G4AgentReport.hh
+    G4AgentRuns.hh
+    G4AgentValidate.hh
+  SOURCES
+    G4Agent.cc
+    G4AgentAnalysis.cc
+    G4AgentCheck.cc
+    G4AgentInspect.cc
+    G4AgentKnowledge.cc
+    G4AgentLLMConfig.cc
+    G4AgentLLMFake.cc
+    G4AgentLLMFactory.cc
+    G4AgentManager.cc
+    G4AgentMessenger.cc
+    G4AgentPolicy.cc
+    G4AgentProject.cc
+    G4AgentPublication.cc
+    G4AgentReport.cc
+    G4AgentRuns.cc
+    G4AgentValidate.cc)
+
+geant4_module_link_libraries(G4agent
+  PUBLIC
+    G4globman
+    G4intercoms
+  PRIVATE
+    G4run
+    G4geometrymng
+    G4partman
+    G4procman
+    G4cuts
+    G4materials
+    G4graphics_reps
+    ${CMAKE_DL_LIBS})

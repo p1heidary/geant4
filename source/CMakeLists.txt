@@ -1,6 +1,7 @@
 # - Define toolkit source code modules and composed libraries
 
 add_subdirectory(analysis)
+add_subdirectory(agent)
 add_subdirectory(digits_hits)
 add_subdirectory(error_propagation)
 add_subdirectory(event)
